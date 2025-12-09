@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Tree Learning - Chinese School for Children Sydney</title>
+    <meta name="description" content="Making Chinese language learning fun, meaningful, and accessible for children in Sydney. Saturday Chinese school and cultural programs.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Color Palette - Nature-inspired */
+            --primary-green: #4a7c59;
+            --secondary-green: #7fb069;
+            --accent-gold: #d4a574;
+            --light-cream: #f8f6f0;
+            --dark-brown: #5d4e37;
+            --soft-white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            
+            /* Typography */
+            --font-primary: 'Nunito', sans-serif;
+            --font-chinese: 'Noto Sans SC', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-cream);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-sm) var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-green);
+        }
+
+        .nav-logo i {
+            font-size: 2rem;
+            margin-right: var(--spacing-xs);
+        }
+
+        .nav-logo small {
+            font-family: var(--font-chinese);
+            font-size: 0.8rem;
+            margin-left: var(--spacing-xs);
+            color: var(--accent-gold);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-lg);
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-green);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-green);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: var(--spacing-xl) var(--spacing-md);
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8f6f0 0%, #e8f5e8 100%);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-green);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-green);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .btn-full {
+            width: 100%;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tree-illustration {
+            font-size: 20rem;
+            color: var(--secondary-green);
+            opacity: 0.8;
+            animation: sway 3s ease-in-out infinite;
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .leaf-1, .leaf-2, .leaf-3 {
+            position: absolute;
+            color: var(--accent-gold);
+            font-size: 2rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .leaf-1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .leaf-2 {
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .leaf-3 {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        /* Problem & Purpose Section */
+        .problem-purpose {
+            padding: var(--spacing-xl) 0;
+            background: white;
+        }
+
+        .pp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+        }
+
+        .pp-card {
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .pp-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pp-card.problem {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffecec 100%);
+            border-left: 5px solid #e53e3e;
+        }
+
+        .pp-card.solution {
+            background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+            border-left: 5px solid var(--secondary-green);
+        }
+
+        .pp-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .pp-card.problem .pp-icon {
+            color: #e53e3e;
+        }
+
+        .pp-card.solution .pp-icon {
+            color: var(--secondary-green);
+        }
+
+        .pp-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .pp-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .pp-card li {
+            padding: var(--spacing-xs) 0;
+            position: relative;
+            padding-left: var(--spacing-md);
+        }
+
+        .pp-card li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        /* Mission & Vision Section */
+        .mission-vision {
+            padding: var(--spacing-xl) 0;
+            background: var(--light-cream);
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+        }
+
+        .mv-card {
+            text-align: center;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mv-card.mission {
+            background: linear-gradient(135deg, #ebf8ff 0%, #e6fffa 100%);
+        }
+
+        .mv-card.vision {
+            background: linear-gradient(135deg, #faf5ff 0%, #f0e6ff 100%);
+        }
+
+        .mv-icon {
+            font-size: 4rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-green);
+        }
+
+        .mv-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .mv-card p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Programs Section */
+        .programs {
+            padding: var(--spacing-xl) 0;
+            background: white;
+        }
+
+        .program-cards {
+            display: grid;
+            gap: var(--spacing-xl);
+        }
+
+        .program-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .program-header {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+            color: white;
+            padding: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .program-header i {
+            font-size: 2.5rem;
+        }
+
+        .program-header h3 {
+            font-size: 1.8rem;
+            flex: 1;
+        }
+
+        .program-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .program-details {
+            display: flex;
+            gap: var(--spacing-lg);
+            padding: var(--spacing-lg);
+            background: var(--light-cream);
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .detail-item i {
+            color: var(--accent-gold);
+        }
+
+        .program-content {
+            padding: var(--spacing-lg);
+        }
+
+        .program-content h4 {
+            color: var(--primary-green);
+            margin: var(--spacing-md) 0 var(--spacing-sm) 0;
+        }
+
+        .age-groups {
+            display: flex;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+            margin: var(--spacing-sm) 0;
+        }
+
+        .age-tag {
+            background: var(--accent-gold);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        .level-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .level-list li {
+            padding: var(--spacing-xs) 0;
+            border-left: 3px solid var(--secondary-green);
+            padding-left: var(--spacing-md);
+            margin: var(--spacing-xs) 0;
+        }
+
+        .program-focus {
+            background: var(--light-cream);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            margin-top: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .classics-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-sm);
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .classics-list li {
+            background: var(--light-cream);
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-chinese);
+        }
+
+        .age-requirement {
+            background: var(--secondary-green);
+            color: white;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-md);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+
+        /* Schedule Section */
+        .schedule {
+            padding: var(--spacing-xl) 0;
+            background: var(--light-cream);
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .schedule-card {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .schedule-card h3 {
+            color: var(--primary-green);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.5rem;
+        }
+
+        .time-slot {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .session {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm);
+            background: var(--light-cream);
+            border-radius: var(--radius-sm);
+        }
+
+        .break {
+            text-align: center;
+            padding: var(--spacing-xs);
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .weekday-schedule {
+            text-align: center;
+        }
+
+        .time-options {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            margin: var(--spacing-md) 0;
+        }
+
+        .time-option {
+            background: var(--accent-gold);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .day-options {
+            list-style: none;
+            padding: 0;
+            margin-top: var(--spacing-md);
+        }
+
+        .day-options li {
+            padding: var(--spacing-xs) 0;
+            color: var(--text-light);
+        }
+
+        .term-info {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .term-details {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-md);
+        }
+
+        .term-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .term-item i {
+            color: var(--accent-gold);
+        }
+
+        /* Enrollment Section */
+        .enrollment {
+            padding: var(--spacing-xl) 0;
+            background: white;
+        }
+
+        .enrollment-process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .process-step {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-lg);
+            background: var(--light-cream);
+            border-radius: var(--radius-lg);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: var(--primary-green);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .enrollment-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .enrollment-form h3 {
+            color: var(--primary-green);
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: var(--spacing-xl) 0;
+            background: var(--light-cream);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-top: 5px;
+        }
+
+        .contact-item h3 {
+            color: var(--primary-green);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .contact-form {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-form h3 {
+            color: var(--primary-green);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-brown);
+            color: white;
+            padding: var(--spacing-xl) 0 var(--spacing-lg) 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-section h3 {
+            color: var(--accent-gold);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-logo i {
+            font-size: 2rem;
+            margin-right: var(--spacing-xs);
+        }
+
+        .footer-logo small {
+            font-family: var(--font-chinese);
+            margin-left: var(--spacing-xs);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            padding: var(--spacing-xs) 0;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-gold);
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .contact-list i {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: var(--shadow-md);
+                padding: var(--spacing-lg) 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tree-illustration {
+                font-size: 12rem;
+            }
+            
+            .pp-grid,
+            .mv-grid,
+            .schedule-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .program-details {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .term-details {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 var(--spacing-sm);
+            }
+            
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .tree-illustration {
+                font-size: 8rem;
+            }
+            
+            .process-step {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Success/Error Messages */
+        .message {
+            padding: var(--spacing-md);
+            border-radius: var(--radius-sm);
+            margin-top: var(--spacing-md);
+            text-align: center;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-tree"></i>
+                <span>Big Tree Learning</span>
+                <small>樹仁教育</small>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#enroll">Enroll</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Grow Strong Roots in Chinese Language & Culture</h1>
+                <p>Making Chinese language learning fun, meaningful, and accessible for children in Sydney</p>
+                <div class="hero-buttons">
+                    <a href="#programs" class="btn btn-primary">Explore Programs</a>
+                    <a href="#enroll" class="btn btn-secondary">Enroll Now</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="tree-illustration">
+                    <i class="fas fa-tree"></i>
+                </div>
+            </div>
+        </div>
+        <div class="floating-elements">
+            <i class="fas fa-leaf leaf-1"></i>
+            <i class="fas fa-leaf leaf-2"></i>
+            <i class="fas fa-leaf leaf-3"></i>
+        </div>
+    </section>
+
+    <!-- Problem & Purpose Section -->
+    <section class="problem-purpose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Big Tree Learning?</h2>
+            </div>
+            <div class="pp-grid">
+                <div class="pp-card problem">
+                    <div class="pp-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>The Challenge</h3>
+                    <ul>
+                        <li>Hard to learn Chinese well in Australia</li>
+                        <li>Lack of environment to use traditional Chinese</li>
+                        <li>Morals and values aren't commonly taught</li>
+                        <li>Limited inspiration for children to learn</li>
+                    </ul>
+                </div>
+                <div class="pp-card solution">
+                    <div class="pp-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Our Solution</h3>
+                    <p>We create an immersive, joyful environment where children naturally absorb Chinese language and culture through:</p>
+                    <ul>
+                        <li>Interactive storytelling and moral lessons</li>
+                        <li>Traditional Chinese etiquette (禮) education</li>
+                        <li>Play-based learning activities</li>
+                        <li>Cultural immersion experiences</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mv-grid">
+                <div class="mv-card mission">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>Make learning Chinese language fun, meaningful, and accessible for all ages</p>
+                </div>
+                <div class="mv-card vision">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>Preserve Chinese mastery through generations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Programs</h2>
+                <p>Designed to nurture Chinese language skills from the roots up</p>
+            </div>
+            
+            <div class="program-cards">
+                <!-- Saturday Chinese School -->
+                <div class="program-card">
+                    <div class="program-header">
+                        <i class="fas fa-school"></i>
+                        <h3>Saturday Chinese School</h3>
+                        <span class="program-badge">Core Program</span>
+                    </div>
+                    <div class="program-details">
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Saturdays, 9:00am–12:00pm</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>10 weeks per term</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-users"></i>
+                            <span>10-15 students per class</span>
+                        </div>
+                    </div>
+                    <div class="program-content">
+                        <h4>Curriculum:</h4>
+                        <p>Mandarin (Traditional), culture, listening, speaking, reading, writing</p>
+                        
+                        <h4>Age Groups:</h4>
+                        <div class="age-groups">
+                            <span class="age-tag">3-6 years (Early learners)</span>
+                            <span class="age-tag">7-12 years (Primary)</span>
+                        </div>
+                        
+                        <h4>Levels:</h4>
+                        <ul class="level-list">
+                            <li><strong>Non-Chinese Background:</strong> Absolute Beginner → Intermediate</li>
+                            <li><strong>Chinese Background:</strong> Beginner → Intermediate → Advanced</li>
+                        </ul>
+                        
+                        <div class="program-focus">
+                            <i class="fas fa-heart"></i>
+                            <span>Focus: Moral stories, Chinese etiquette (禮), fun & engaging learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extended Learning -->
+                <div class="program-card">
+                    <div class="program-header">
+                        <i class="fas fa-clock"></i>
+                        <h3>Extended Learning</h3>
+                        <span class="program-badge">Afternoon</span>
+                    </div>
+                    <div class="program-details">
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Saturdays, 1-3pm & 3-5pm</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>10 weeks per term</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-users"></i>
+                            <span>5-10 students per class</span>
+                        </div>
+                    </div>
+                    <div class="program-content">
+                        <h4>Target:</h4>
+                        <p>Students continuing from morning class for intensive study</p>
+                        
+                        <h4>Focus Areas:</h4>
+                        <ul>
+                            <li>Advanced reading & writing</li>
+                            <li>Public speaking & presentations</li>
+                            <li>Creative writing & essays</li>
+                            <li>Simple journaling for vocabulary building</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Classic Chinese Reading -->
+                <div class="program-card">
+                    <div class="program-header">
+                        <i class="fas fa-book"></i>
+                        <h3>Classic Chinese Reading</h3>
+                        <span class="program-badge">Classics</span>
+                    </div>
+                    <div class="program-details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar-week"></i>
+                            <span>Weekdays, before/after school</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-hourglass-half"></i>
+                            <span>1 hour sessions</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-users"></i>
+                            <span>4-5 students per class</span>
+                        </div>
+                    </div>
+                    <div class="program-content">
+                        <h4>Curriculum:</h4>
+                        <p>Chinese Classics including:</p>
+                        <ul class="classics-list">
+                            <li>論語 (Analects)</li>
+                            <li>孟子 (Mencius)</li>
+                            <li>大學 (Great Learning)</li>
+                            <li>中庸 (Doctrine of the Mean)</li>
+                            <li>易經 (Book of Changes)</li>
+                            <li>詩經 (Book of Songs)</li>
+                            <li>唐詩 (Tang Poetry)</li>
+                            <li>宋詞 (Song Ci Poetry)</li>
+                        </ul>
+                        <div class="age-requirement">
+                            <i class="fas fa-child"></i>
+                            <span>Ages 3+ welcome</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="schedule">
+        <div class="container">
+            <div class="section-header">
+                <h2>Class Schedule</h2>
+                <p>Flexible options to fit your family's needs</p>
+            </div>
+            
+            <div class="schedule-grid">
+                <div class="schedule-card">
+                    <h3>Saturday Program</h3>
+                    <div class="time-slot">
+                        <div class="session">
+                            <span class="time">9:00am - 12:00pm</span>
+                            <span class="session-name">Core Chinese School</span>
+                        </div>
+                        <div class="break">Lunch Break</div>
+                        <div class="session">
+                            <span class="time">1:00pm - 3:00pm</span>
+                            <span class="session-name">Extended Learning (Session 1)</span>
+                        </div>
+                        <div class="session">
+                            <span class="time">3:00pm - 5:00pm</span>
+                            <span class="session-name">Extended Learning (Session 2)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="schedule-card">
+                    <h3>Weekday Classics</h3>
+                    <div class="weekday-schedule">
+                        <p>Available Monday - Friday</p>
+                        <div class="time-options">
+                            <span class="time-option">Before School</span>
+                            <span class="time-option">After School</span>
+                        </div>
+                        <p class="duration">1 hour sessions</p>
+                        <p class="flexibility">Choose your regular days:</p>
+                        <ul class="day-options">
+                            <li>1 day per week</li>
+                            <li>2 days per week</li>
+                            <li>3 days per week</li>
+                            <li>5 days per week</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="term-info">
+                <h3>Term Structure</h3>
+                <div class="term-details">
+                    <div class="term-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Each term runs for 10 weeks</span>
+                    </div>
+                    <div class="term-item">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>4 terms per year</span>
+                    </div>
+                    <div class="term-item">
+                        <i class="fas fa-pause"></i>
+                        <span>Breaks between terms</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enrollment Section -->
+    <section id="enroll" class="enrollment">
+        <div class="container">
+            <div class="section-header">
+                <h2>Enroll Your Child</h2>
+                <p>Start your child's Chinese learning journey today</p>
+            </div>
+            
+            <div class="enrollment-process">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Book a Free Trial</h3>
+                        <p>Experience our teaching style with a complimentary trial class</p>
+                        <button class="btn btn-primary">Book Trial</button>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Assessment & Placement</h3>
+                        <p>We'll assess your child's level and recommend the best class</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Complete Enrollment</h3>
+                        <p>Fill out our simple enrollment form and secure your spot</p>
+                        <button class="btn btn-secondary">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="enrollment-form">
+                <h3>Quick Enrollment</h3>
+                <form id="enrollForm">
+                    <div class="form-group">
+                        <label for="parentName">Parent's Name *</label>
+                        <input type="text" id="parentName" name="parentName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="childName">Child's Name *</label>
+                        <input type="text" id="childName" name="childName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="childAge">Child's Age *</label>
+                        <select id="childAge" name="childAge" required>
+                            <option value="">Select Age</option>
+                            <option value="3">3 years</option>
+                            <option value="4">4 years</option>
+                            <option value="5">5 years</option>
+                            <option value="6">6 years</option>
+                            <option value="7">7 years</option>
+                            <option value="8">8 years</option>
+                            <option value="9">9 years</option>
+                            <option value="10">10 years</option>
+                            <option value="11">11 years</option>
+                            <option value="12">12 years</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="program">Interested Program *</label>
+                        <select id="program" name="program" required>
+                            <option value="">Select Program</option>
+                            <option value="saturday-morning">Saturday Chinese School (Morning)</option>
+                            <option value="saturday-afternoon">Extended Learning (Afternoon)</option>
+                            <option value="classics">Classic Chinese Reading (Weekdays)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your child's Chinese background or any questions..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">Submit Enrollment</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Sydney, Australia</p>
+                            <small>Serving Greater Sydney Area</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+61 (0) 4XX XXX XXX</p>
+                            <small>Mon-Fri: 9am-6pm</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>bigtreelearning@gmail.com</p>
+                            <small>Text message for fastest response</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Office Hours</h3>
+                            <p>Monday - Friday: 9:00am - 6:00pm</p>
+                            <p>Saturday: 8:30am - 5:00pm</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Your Name *</label>
+                                <input type="text" id="contactName" name="contactName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email *</label>
+                                <input type="email" id="contactEmail" name="contactEmail" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactSubject">Subject *</label>
+                            <input type="text" id="contactSubject" name="contactSubject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" name="contactMessage" rows="5" required placeholder="How can we help you?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-tree"></i>
+                        <span>Big Tree Learning</span>
+                        <small>樹仁教育</small>
+                    </div>
+                    <p>Making Chinese language learning fun, meaningful, and accessible for children in Sydney.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Programs</h3>
+                    <ul>
+                        <li><a href="#programs">Saturday Chinese School</a></li>
+                        <li><a href="#programs">Extended Learning</a></li>
+                        <li><a href="#programs">Classic Chinese Reading</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#enroll">Enrollment</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-phone"></i> +61 (0) 4XX XXX XXX</li>
+                        <li><i class="fas fa-envelope"></i> bigtreelearning@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Sydney, Australia</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Big Tree Learning. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Form Handling
+        const enrollForm = document.getElementById('enrollForm');
+        const contactForm = document.getElementById('contactForm');
+
+        // Enrollment Form
+        enrollForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(enrollForm);
+            const data = Object.fromEntries(formData);
+            
+            // Show loading state
+            const submitBtn = enrollForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.innerHTML = '<span class="loading"></span> Submitting...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Simulate API call (replace with actual endpoint)
+                await simulateApiCall(data);
+                
+                // Show success message
+                showMessage(enrollForm, 'Thank you for your enrollment! We will contact you within 24 hours to confirm your trial class.', 'success');
+                enrollForm.reset();
+                
+            } catch (error) {
+                showMessage(enrollForm, 'Sorry, there was an error submitting your enrollment. Please try again or contact us directly.', 'error');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Contact Form
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Show loading state
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.innerHTML = '<span class="loading"></span> Sending...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Simulate API call (replace with actual endpoint)
+                await simulateApiCall(data);
+                
+                // Show success message
+                showMessage(contactForm, 'Thank you for your message! We will get back to you within 24 hours.', 'success');
+                contactForm.reset();
+                
+            } catch (error) {
+                showMessage(contactForm, 'Sorry, there was an error sending your message. Please try again or call us directly.', 'error');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Simulate API call
+        function simulateApiCall(data) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    // Simulate random success/error (90% success rate)
+                    if (Math.random() > 0.1) {
+                        resolve({ success: true, data });
+                    } else {
+                        reject(new Error('API Error'));
+                    }
+                }, 2000);
+            });
+        }
+
+        // Show message function
+        function showMessage(form, text, type) {
+            // Remove existing messages
+            const existingMessage = form.querySelector('.message');
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+            
+            // Create new message
+            const message = document.createElement('div');
+            message.className = `message ${type}`;
+            message.textContent = text;
+            
+            // Insert after form
+            form.parentNode.insertBefore(message, form.nextSibling);
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                if (message.parentNode) {
+                    message.remove();
+                }
+            }, 5000);
+            
+            // Scroll to message
+            message.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.pp-card, .mv-card, .program-card, .schedule-card, .process-step');
+            
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Program card interaction
+        document.querySelectorAll('.program-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Dynamic year in footer
+        const currentYear = new Date().getFullYear();
+        const footerYear = document.querySelector('.footer-bottom p');
+        if (footerYear) {
+            footerYear.innerHTML = `&copy; ${currentYear} Big Tree Learning. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>`;
+        }
+
+        // Add some interactive elements for children
+        const treeIcon = document.querySelector('.tree-illustration');
+        if (treeIcon) {
+            treeIcon.addEventListener('click', () => {
+                // Create leaf particles
+                for (let i = 0; i < 5; i++) {
+                    createLeafParticle(treeIcon);
+                }
+            });
+        }
+
+        function createLeafParticle(element) {
+            const leaf = document.createElement('i');
+            leaf.className = 'fas fa-leaf';
+            leaf.style.position = 'absolute';
+            leaf.style.color = '#d4a574';
+            leaf.style.fontSize = '1.5rem';
+            leaf.style.pointerEvents = 'none';
+            leaf.style.zIndex = '1000';
+            
+            const rect = element.getBoundingClientRect();
+            leaf.style.left = rect.left + rect.width / 2 + 'px';
+            leaf.style.top = rect.top + rect.height / 2 + 'px';
+            
+            document.body.appendChild(leaf);
+            
+            // Animate leaf
+            const angle = Math.random() * Math.PI * 2;
+            const velocity = 100 + Math.random() * 100;
+            const lifetime = 1000 + Math.random() * 1000;
+            
+            let start = null;
+            function animate(timestamp) {
+                if (!start) start = timestamp;
+                const progress = timestamp - start;
+                const t = progress / lifetime;
+                
+                if (t > 1) {
+                    leaf.remove();
+                    return;
+                }
+                
+                const x = Math.cos(angle) * velocity * t;
+                const y = Math.sin(angle) * velocity * t + 0.5 * 300 * t * t; // gravity
+                const rotation = t * 720;
+                const opacity = 1 - t;
+                
+                leaf.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
+                leaf.style.opacity = opacity;
+                
+                requestAnimationFrame(animate);
+            }
+            
+            requestAnimationFrame(animate);
+        }
+    </script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
