@@ -1,53 +1,17 @@
-<!-- Place the first <script> tag in your HTML's <head> -->
-<script src="https://cdn.tiny.cloud/1/gx0n5kt33hd2f6vkxmgd2nmohpqy37bqtzbah2b13oa7b584/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
-
-<!-- Place the following <script> and <textarea> tags your HTML's <body> -->
-<script>
-  tinymce.init({
-    selector: 'textarea',
-    plugins: [
-      // Core editing features
-      'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
-      // Your account includes a free trial of TinyMCE premium features
-      // Try the most popular premium features until Dec 23, 2025:
-      'checklist', 'mediaembed', 'casechange', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'advtemplate', 'ai', 'uploadcare', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown','importword', 'exportword', 'exportpdf'
-    ],
-    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography uploadcare | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-    tinycomments_mode: 'embedded',
-    tinycomments_author: 'Author name',
-    mergetags_list: [
-      { value: 'First.Name', title: 'First Name' },
-      { value: 'Email', title: 'Email' },
-    ],
-    ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
-    uploadcare_public_key: '85ebec84fc88adf6a898',
-  });
-</script>
-<textarea>
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
     <meta charset="UTF-8">
-    <title>Untitled</title>
-    <link rel="stylesheet" href="./style.css">
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Big Tree Learning - Chinese School for Children Sydney</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Making Chinese language learning fun, meaningful, and accessible for children in Sydney. Saturday Chinese school and cultural programs.">
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://cdn.tiny.cloud/1/gx0n5kt33hd2f6vkxmgd2nmohpqy37bqtzbah2b13oa7b584/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
     
     <style>
         /* Reset and Base Styles */
@@ -824,6 +788,16 @@
             margin-bottom: var(--spacing-xs);
         }
 
+        .contact-item p {
+             /* Preserve TinyMCE editing ability for contact details */
+            display: inline-block;
+        }
+
+        .contact-item small {
+             /* Preserve TinyMCE editing ability for contact small details */
+            display: block;
+        }
+
         .contact-form {
             background: white;
             padding: var(--spacing-lg);
@@ -1068,7 +1042,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
@@ -1092,7 +1065,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-text">
@@ -1116,440 +1088,433 @@
         </div>
     </section>
 
-    <!-- Problem & Purpose Section -->
-    <section class="problem-purpose">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why Big Tree Learning?</h2>
-            </div>
-            <div class="pp-grid">
-                <div class="pp-card problem">
-                    <div class="pp-icon">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </div>
-                    <h3>The Challenge</h3>
-                    <ul>
-                        <li>Hard to learn Chinese well in Australia</li>
-                        <li>Lack of environment to use traditional Chinese</li>
-                        <li>Morals and values aren't commonly taught</li>
-                        <li>Limited inspiration for children to learn</li>
-                    </ul>
-                </div>
-                <div class="pp-card solution">
-                    <div class="pp-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3>Our Solution</h3>
-                    <p>We create an immersive, joyful environment where children naturally absorb Chinese language and culture through:</p>
-                    <ul>
-                        <li>Interactive storytelling and moral lessons</li>
-                        <li>Traditional Chinese etiquette (禮) education</li>
-                        <li>Play-based learning activities</li>
-                        <li>Cultural immersion experiences</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div id="main-editable-content">
 
-    <!-- Mission & Vision Section -->
-    <section class="mission-vision">
-        <div class="container">
-            <div class="mv-grid">
-                <div class="mv-card mission">
-                    <div class="mv-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Our Mission</h3>
-                    <p>Make learning Chinese language fun, meaningful, and accessible for all ages</p>
+        <section class="problem-purpose">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Big Tree Learning?</h2>
                 </div>
-                <div class="mv-card vision">
-                    <div class="mv-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3>Our Vision</h3>
-                    <p>Preserve Chinese mastery through generations</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Programs Section -->
-    <section id="programs" class="programs">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Programs</h2>
-                <p>Designed to nurture Chinese language skills from the roots up</p>
-            </div>
-            
-            <div class="program-cards">
-                <!-- Saturday Chinese School -->
-                <div class="program-card">
-                    <div class="program-header">
-                        <i class="fas fa-school"></i>
-                        <h3>Saturday Chinese School</h3>
-                        <span class="program-badge">Core Program</span>
-                    </div>
-                    <div class="program-details">
-                        <div class="detail-item">
-                            <i class="fas fa-clock"></i>
-                            <span>Saturdays, 9:00am–12:00pm</span>
+                <div class="pp-grid">
+                    <div class="pp-card problem">
+                        <div class="pp-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
                         </div>
-                        <div class="detail-item">
-                            <i class="fas fa-calendar"></i>
-                            <span>10 weeks per term</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-users"></i>
-                            <span>10-15 students per class</span>
-                        </div>
-                    </div>
-                    <div class="program-content">
-                        <h4>Curriculum:</h4>
-                        <p>Mandarin (Traditional), culture, listening, speaking, reading, writing</p>
-                        
-                        <h4>Age Groups:</h4>
-                        <div class="age-groups">
-                            <span class="age-tag">3-6 years (Early learners)</span>
-                            <span class="age-tag">7-12 years (Primary)</span>
-                        </div>
-                        
-                        <h4>Levels:</h4>
-                        <ul class="level-list">
-                            <li><strong>Non-Chinese Background:</strong> Absolute Beginner → Intermediate</li>
-                            <li><strong>Chinese Background:</strong> Beginner → Intermediate → Advanced</li>
-                        </ul>
-                        
-                        <div class="program-focus">
-                            <i class="fas fa-heart"></i>
-                            <span>Focus: Moral stories, Chinese etiquette (禮), fun & engaging learning</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Extended Learning -->
-                <div class="program-card">
-                    <div class="program-header">
-                        <i class="fas fa-clock"></i>
-                        <h3>Extended Learning</h3>
-                        <span class="program-badge">Afternoon</span>
-                    </div>
-                    <div class="program-details">
-                        <div class="detail-item">
-                            <i class="fas fa-clock"></i>
-                            <span>Saturdays, 1-3pm & 3-5pm</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-calendar"></i>
-                            <span>10 weeks per term</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-users"></i>
-                            <span>5-10 students per class</span>
-                        </div>
-                    </div>
-                    <div class="program-content">
-                        <h4>Target:</h4>
-                        <p>Students continuing from morning class for intensive study</p>
-                        
-                        <h4>Focus Areas:</h4>
+                        <h3>The Challenge</h3>
                         <ul>
-                            <li>Advanced reading & writing</li>
-                            <li>Public speaking & presentations</li>
-                            <li>Creative writing & essays</li>
-                            <li>Simple journaling for vocabulary building</li>
+                            <li>Hard to learn Chinese well in Australia</li>
+                            <li>Lack of environment to use traditional Chinese</li>
+                            <li>Morals and values aren't commonly taught</li>
+                            <li>Limited inspiration for children to learn</li>
                         </ul>
                     </div>
-                </div>
-
-                <!-- Classic Chinese Reading -->
-                <div class="program-card">
-                    <div class="program-header">
-                        <i class="fas fa-book"></i>
-                        <h3>Classic Chinese Reading</h3>
-                        <span class="program-badge">Classics</span>
-                    </div>
-                    <div class="program-details">
-                        <div class="detail-item">
-                            <i class="fas fa-calendar-week"></i>
-                            <span>Weekdays, before/after school</span>
+                    <div class="pp-card solution">
+                        <div class="pp-icon">
+                            <i class="fas fa-seedling"></i>
                         </div>
-                        <div class="detail-item">
-                            <i class="fas fa-hourglass-half"></i>
-                            <span>1 hour sessions</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-users"></i>
-                            <span>4-5 students per class</span>
-                        </div>
-                    </div>
-                    <div class="program-content">
-                        <h4>Curriculum:</h4>
-                        <p>Chinese Classics including:</p>
-                        <ul class="classics-list">
-                            <li>論語 (Analects)</li>
-                            <li>孟子 (Mencius)</li>
-                            <li>大學 (Great Learning)</li>
-                            <li>中庸 (Doctrine of the Mean)</li>
-                            <li>易經 (Book of Changes)</li>
-                            <li>詩經 (Book of Songs)</li>
-                            <li>唐詩 (Tang Poetry)</li>
-                            <li>宋詞 (Song Ci Poetry)</li>
-                        </ul>
-                        <div class="age-requirement">
-                            <i class="fas fa-child"></i>
-                            <span>Ages 3+ welcome</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Schedule Section -->
-    <section id="schedule" class="schedule">
-        <div class="container">
-            <div class="section-header">
-                <h2>Class Schedule</h2>
-                <p>Flexible options to fit your family's needs</p>
-            </div>
-            
-            <div class="schedule-grid">
-                <div class="schedule-card">
-                    <h3>Saturday Program</h3>
-                    <div class="time-slot">
-                        <div class="session">
-                            <span class="time">9:00am - 12:00pm</span>
-                            <span class="session-name">Core Chinese School</span>
-                        </div>
-                        <div class="break">Lunch Break</div>
-                        <div class="session">
-                            <span class="time">1:00pm - 3:00pm</span>
-                            <span class="session-name">Extended Learning (Session 1)</span>
-                        </div>
-                        <div class="session">
-                            <span class="time">3:00pm - 5:00pm</span>
-                            <span class="session-name">Extended Learning (Session 2)</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="schedule-card">
-                    <h3>Weekday Classics</h3>
-                    <div class="weekday-schedule">
-                        <p>Available Monday - Friday</p>
-                        <div class="time-options">
-                            <span class="time-option">Before School</span>
-                            <span class="time-option">After School</span>
-                        </div>
-                        <p class="duration">1 hour sessions</p>
-                        <p class="flexibility">Choose your regular days:</p>
-                        <ul class="day-options">
-                            <li>1 day per week</li>
-                            <li>2 days per week</li>
-                            <li>3 days per week</li>
-                            <li>5 days per week</li>
+                        <h3>Our Solution</h3>
+                        <p>We create an immersive, joyful environment where children naturally absorb Chinese language and culture through:</p>
+                        <ul>
+                            <li>Interactive storytelling and moral lessons</li>
+                            <li>Traditional Chinese etiquette (禮) education</li>
+                            <li>Play-based learning activities</li>
+                            <li>Cultural immersion experiences</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            
-            <div class="term-info">
-                <h3>Term Structure</h3>
-                <div class="term-details">
-                    <div class="term-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Each term runs for 10 weeks</span>
-                    </div>
-                    <div class="term-item">
-                        <i class="fas fa-sync-alt"></i>
-                        <span>4 terms per year</span>
-                    </div>
-                    <div class="term-item">
-                        <i class="fas fa-pause"></i>
-                        <span>Breaks between terms</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Enrollment Section -->
-    <section id="enroll" class="enrollment">
-        <div class="container">
-            <div class="section-header">
-                <h2>Enroll Your Child</h2>
-                <p>Start your child's Chinese learning journey today</p>
-            </div>
-            
-            <div class="enrollment-process">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Book a Free Trial</h3>
-                        <p>Experience our teaching style with a complimentary trial class</p>
-                        <button class="btn btn-primary">Book Trial</button>
+        <section class="mission-vision">
+            <div class="container">
+                <div class="mv-grid">
+                    <div class="mv-card mission">
+                        <div class="mv-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>Make learning Chinese language fun, meaningful, and accessible for all ages</p>
                     </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Assessment & Placement</h3>
-                        <p>We'll assess your child's level and recommend the best class</p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Complete Enrollment</h3>
-                        <p>Fill out our simple enrollment form and secure your spot</p>
-                        <button class="btn btn-secondary">Enroll Now</button>
+                    <div class="mv-card vision">
+                        <div class="mv-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>Preserve Chinese mastery through generations</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="enrollment-form">
-                <h3>Quick Enrollment</h3>
-                <form id="enrollForm">
-                    <div class="form-group">
-                        <label for="parentName">Parent's Name *</label>
-                        <input type="text" id="parentName" name="parentName" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="childName">Child's Name *</label>
-                        <input type="text" id="childName" name="childName" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="childAge">Child's Age *</label>
-                        <select id="childAge" name="childAge" required>
-                            <option value="">Select Age</option>
-                            <option value="3">3 years</option>
-                            <option value="4">4 years</option>
-                            <option value="5">5 years</option>
-                            <option value="6">6 years</option>
-                            <option value="7">7 years</option>
-                            <option value="8">8 years</option>
-                            <option value="9">9 years</option>
-                            <option value="10">10 years</option>
-                            <option value="11">11 years</option>
-                            <option value="12">12 years</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="program">Interested Program *</label>
-                        <select id="program" name="program" required>
-                            <option value="">Select Program</option>
-                            <option value="saturday-morning">Saturday Chinese School (Morning)</option>
-                            <option value="saturday-afternoon">Extended Learning (Afternoon)</option>
-                            <option value="classics">Classic Chinese Reading (Weekdays)</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message (Optional)</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your child's Chinese background or any questions..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-full">Submit Enrollment</button>
-                </form>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Contact Us</h2>
-                <p>We'd love to hear from you</p>
-            </div>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Location</h3>
-                            <p>Sydney, Australia</p>
-                            <small>Serving Greater Sydney Area</small>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>+61 (0) 4XX XXX XXX</p>
-                            <small>Mon-Fri: 9am-6pm</small>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>bigtreelearning@gmail.com</p>
-                            <small>Text message for fastest response</small>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h3>Office Hours</h3>
-                            <p>Monday - Friday: 9:00am - 6:00pm</p>
-                            <p>Saturday: 8:30am - 5:00pm</p>
-                        </div>
-                    </div>
+        <section id="programs" class="programs">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Programs</h2>
+                    <p>Designed to nurture Chinese language skills from the roots up</p>
                 </div>
                 
-                <div class="contact-form">
-                    <h3>Send us a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="contactName">Your Name *</label>
-                                <input type="text" id="contactName" name="contactName" required>
+                <div class="program-cards">
+                    <div class="program-card">
+                        <div class="program-header">
+                            <i class="fas fa-school"></i>
+                            <h3>Saturday Chinese School</h3>
+                            <span class="program-badge">Core Program</span>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Saturdays, 9:00am–12:00pm</span>
                             </div>
-                            <div class="form-group">
-                                <label for="contactEmail">Email *</label>
-                                <input type="email" id="contactEmail" name="contactEmail" required>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>10 weeks per term</span>
                             </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>10-15 students per class</span>
+                            </div>
+                        </div>
+                        <div class="program-content">
+                            <h4>Curriculum:</h4>
+                            <p>Mandarin (Traditional), culture, listening, speaking, reading, writing</p>
+                            
+                            <h4>Age Groups:</h4>
+                            <div class="age-groups">
+                                <span class="age-tag">3-6 years (Early learners)</span>
+                                <span class="age-tag">7-12 years (Primary)</span>
+                            </div>
+                            
+                            <h4>Levels:</h4>
+                            <ul class="level-list">
+                                <li><strong>Non-Chinese Background:</strong> Absolute Beginner → Intermediate</li>
+                                <li><strong>Chinese Background:</strong> Beginner → Intermediate → Advanced</li>
+                            </ul>
+                            
+                            <div class="program-focus">
+                                <i class="fas fa-heart"></i>
+                                <span>Focus: Moral stories, Chinese etiquette (禮), fun & engaging learning</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <i class="fas fa-clock"></i>
+                            <h3>Extended Learning</h3>
+                            <span class="program-badge">Afternoon</span>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Saturdays, 1-3pm & 3-5pm</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>10 weeks per term</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>5-10 students per class</span>
+                            </div>
+                        </div>
+                        <div class="program-content">
+                            <h4>Target:</h4>
+                            <p>Students continuing from morning class for intensive study</p>
+                            
+                            <h4>Focus Areas:</h4>
+                            <ul>
+                                <li>Advanced reading & writing</li>
+                                <li>Public speaking & presentations</li>
+                                <li>Creative writing & essays</li>
+                                <li>Simple journaling for vocabulary building</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <i class="fas fa-book"></i>
+                            <h3>Classic Chinese Reading</h3>
+                            <span class="program-badge">Classics</span>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-week"></i>
+                                <span>Weekdays, before/after school</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>1 hour sessions</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>4-5 students per class</span>
+                            </div>
+                        </div>
+                        <div class="program-content">
+                            <h4>Curriculum:</h4>
+                            <p>Chinese Classics including:</p>
+                            <ul class="classics-list">
+                                <li>論語 (Analects)</li>
+                                <li>孟子 (Mencius)</li>
+                                <li>大學 (Great Learning)</li>
+                                <li>中庸 (Doctrine of the Mean)</li>
+                                <li>易經 (Book of Changes)</li>
+                                <li>詩經 (Book of Songs)</li>
+                                <li>唐詩 (Tang Poetry)</li>
+                                <li>宋詞 (Song Ci Poetry)</li>
+                            </ul>
+                            <div class="age-requirement">
+                                <i class="fas fa-child"></i>
+                                <span>Ages 3+ welcome</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule" class="schedule">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Class Schedule</h2>
+                    <p>Flexible options to fit your family's needs</p>
+                </div>
+                
+                <div class="schedule-grid">
+                    <div class="schedule-card">
+                        <h3>Saturday Program</h3>
+                        <div class="time-slot">
+                            <div class="session">
+                                <span class="time">9:00am - 12:00pm</span>
+                                <span class="session-name">Core Chinese School</span>
+                            </div>
+                            <div class="break">Lunch Break</div>
+                            <div class="session">
+                                <span class="time">1:00pm - 3:00pm</span>
+                                <span class="session-name">Extended Learning (Session 1)</span>
+                            </div>
+                            <div class="session">
+                                <span class="time">3:00pm - 5:00pm</span>
+                                <span class="session-name">Extended Learning (Session 2)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-card">
+                        <h3>Weekday Classics</h3>
+                        <div class="weekday-schedule">
+                            <p>Available Monday - Friday</p>
+                            <div class="time-options">
+                                <span class="time-option">Before School</span>
+                                <span class="time-option">After School</span>
+                            </div>
+                            <p class="duration">1 hour sessions</p>
+                            <p class="flexibility">Choose your regular days:</p>
+                            <ul class="day-options">
+                                <li>1 day per week</li>
+                                <li>2 days per week</li>
+                                <li>3 days per week</li>
+                                <li>5 days per week</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="term-info">
+                    <h3>Term Structure</h3>
+                    <div class="term-details">
+                        <div class="term-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Each term runs for 10 weeks</span>
+                        </div>
+                        <div class="term-item">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>4 terms per year</span>
+                        </div>
+                        <div class="term-item">
+                            <i class="fas fa-pause"></i>
+                            <span>Breaks between terms</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="enroll" class="enrollment">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Enroll Your Child</h2>
+                    <p>Start your child's Chinese learning journey today</p>
+                </div>
+                
+                <div class="enrollment-process">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Book a Free Trial</h3>
+                            <p>Experience our teaching style with a complimentary trial class</p>
+                            <button class="btn btn-primary">Book Trial</button>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Assessment & Placement</h3>
+                            <p>We'll assess your child's level and recommend the best class</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Complete Enrollment</h3>
+                            <p>Fill out our simple enrollment form and secure your spot</p>
+                            <button class="btn btn-secondary">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="enrollment-form">
+                    <h3>Quick Enrollment</h3>
+                    <form id="enrollForm">
+                        <div class="form-group">
+                            <label for="parentName">Parent's Name *</label>
+                            <input type="text" id="parentName" name="parentName" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="contactSubject">Subject *</label>
-                            <input type="text" id="contactSubject" name="contactSubject" required>
+                            <label for="childName">Child's Name *</label>
+                            <input type="text" id="childName" name="childName" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="contactMessage">Message *</label>
-                            <textarea id="contactMessage" name="contactMessage" rows="5" required placeholder="How can we help you?"></textarea>
+                            <label for="childAge">Child's Age *</label>
+                            <select id="childAge" name="childAge" required>
+                                <option value="">Select Age</option>
+                                <option value="3">3 years</option>
+                                <option value="4">4 years</option>
+                                <option value="5">5 years</option>
+                                <option value="6">6 years</option>
+                                <option value="7">7 years</option>
+                                <option value="8">8 years</option>
+                                <option value="9">9 years</option>
+                                <option value="10">10 years</option>
+                                <option value="11">11 years</option>
+                                <option value="12">12 years</option>
+                            </select>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <div class="form-group">
+                            <label for="program">Interested Program *</label>
+                            <select id="program" name="program" required>
+                                <option value="">Select Program</option>
+                                <option value="saturday-morning">Saturday Chinese School (Morning)</option>
+                                <option value="saturday-afternoon">Extended Learning (Afternoon)</option>
+                                <option value="classics">Classic Chinese Reading (Weekdays)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message (Optional)</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your child's Chinese background or any questions..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">Submit Enrollment</button>
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contact Us</h2>
+                    <p>We'd love to hear from you</p>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Location</h3>
+                                <p>Sydney, Australia</p>
+                                <small>Serving Greater Sydney Area</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Phone</h3>
+                                <p>+61 (0) 4XX XXX XXX</p>
+                                <small>Mon-Fri: 9am-6pm</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p>bigtreelearning@gmail.com</p>
+                                <small>Text message for fastest response</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Office Hours</h3>
+                                <p>Monday - Friday: 9:00am - 6:00pm</p>
+                                <p>Saturday: 8:30am - 5:00pm</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>Send us a Message</h3>
+                        <form id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactName">Your Name *</label>
+                                    <input type="text" id="contactName" name="contactName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactEmail">Email *</label>
+                                    <input type="email" id="contactEmail" name="contactEmail" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactSubject">Subject *</label>
+                                <input type="text" id="contactSubject" name="contactSubject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactMessage">Message *</label>
+                                <textarea id="contactMessage" name="contactMessage" rows="5" required placeholder="How can we help you?"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -1605,6 +1570,22 @@
     </footer>
 
     <script>
+        // TinyMCE Initialization
+        tinymce.init({
+            // Target the new ID you created for the wrapper
+            selector: 'div#main-editable-content',
+            // Turn it into a live, inline editor
+            inline: true,
+            menubar: true, // Show the menu bar
+            // Plugins for features like links, images, code viewing, etc.
+            plugins: 'advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime media table paste help wordcount',
+            // Toolbar buttons for easy formatting
+            toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link image | code',
+            // Ensure content can be edited without disrupting your CSS classes
+            forced_root_block: 'div'
+        });
+
+
         // Mobile Navigation Toggle
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
@@ -1648,7 +1629,7 @@
             }
         });
 
-        // Form Handling
+        // Form Handling (Scripts for form submission are left as is)
         const enrollForm = document.getElementById('enrollForm');
         const contactForm = document.getElementById('contactForm');
 
@@ -1854,11 +1835,3 @@
     </script>
 </body>
 </html>
-    <script  src="./script.js"></script>
-
-  </body>
-  
-</html>
-
-</textarea>
-
